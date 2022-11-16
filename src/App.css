@@ -1,38 +1,292 @@
-.App {
-  text-align: center;
+
+.main-nav{
+    background: var(--primary);
+    padding: 1.25rem 2.5%;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.main-nav a {
+    color: var(--light);
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-header{
+    margin-top: 63px;
+    width: 100%;
+    height: 35vh;
+    background: url(https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-header h1{
+    font-size: 4rem;
+    margin-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home header p {
+    font-size: 1.5rem;
+    width: 80%;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0,4);
 }
 
-.App-link {
-  color: #61dafb;
+main{
+    width: 80%;
+    margin: auto;
+    padding: 3rem 0 6rem 0;
+    min-height: calc(100vh - 59px);
+
+}
+ .menu{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .card{
+    width: 25%;
+    padding: 1rem;
+ }
+
+ .card .content{
+    border: 1px solid #ccc;
+
+ }
+
+ .card .content img{
+    width: 100%;
+ }
+
+ .card .content h4{
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    padding: 1rem 0;
+    width: 85%;
+    margin: auto;
+    border-bottom: 2px solid #ccc;
+ }
+
+ .card .content ul{
+    padding: 1rem;
+ }
+
+ .card .ingredients{
+    padding: 0 7.5;
+    margin-top: 1rem;
+    border-bottom: 1px solid#ccc;
+ }
+
+ .card .ingredients li{
+    text-transform: capitalize;
+    margin-bottom: 0.25;
+
+ }
+
+ .card .price{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 0 0.5rem 0;
+
+ }
+ .card .btn-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+ }
+
+ footer{
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    width: 90%;
+    margin: auto;
+ }
+
+ .pizza-view{
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    margin-top: 63px;
+ }
+
+ .pizza-view .image {
+    width: 40%;
+ }
+
+ .pizza-view .image img{
+    width: 100%;
+ }
+
+ .pizza-view .content{
+    width: 60%;
+    padding: 1rem;
+ }
+
+ .pizza-view .content h4{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1rem;
+    margin-bottom: 1rem;
+ }
+
+ .pizza-view .desc {
+    margin-bottom: 2rem;
+
+ }
+
+ .pizza-view ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+
+ }
+ .pizza-view .price-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+ }
+
+ .cart {
+    margin-top: 63px;
+ }
+
+ .cart h2{
+    margin-bottom: 2rem;
+ }
+
+ .cart li{
+    padding: 1rem;
+    border-bottom: 2px solid #ccd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .cart li img{
+    width: 80px;
+    margin-right: 1rem;
+ }
+
+ .cart li .product, 
+ .cart li .price, 
+ .cart li .btns{
+    display: flex;
+    align-items: center;
+
+ }
+
+ .cart li .product h4{
+    font-size: 1.125rem;
+    text-transform: capitalize;
+ }
+
+ .cart li .btn{
+    width: 30px;
+ }
+
+ .cart li p{
+    width: 50px;
+    text-align: center;
+ }
+
+ .cart .total{
+    padding-left: 1rem;
+ }
+
+ .cart .total h3{
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+
+ }
+
+ .cart .empty-cart{
+    font-size: 1.125rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.not-found, .payment{
+    padding-top: 9rem;
+    text-align: center;
+}
+
+.not-found h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+
+}
+
+.not-found p{
+    margin-bottom: 3rem;
+}
+
+.payment i {
+    font-size: 4rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+ @media (max-width: 992px){
+    .card {
+        width: 50%;
+    }
+ }
+
+ @media (max-width: 768px){
+    .pizza-view .image {
+        width: 100%;
+        height: 30vh;
+    }
+    .pizza-view .content{
+        width: 100%;
+     }
+ }
+
+@media (max-width: 592px) {
+    .home-header {
+        height: 60vh;
+    }
+    .home-header h1 {
+        font-size: 2.5rem;
+    }
+    .home-header p {
+        font-size: 1.25rem;
+    }
+    main{
+        width: 90%;
+    }
+    .card {
+        width: 100%;
+    }
+    .cart{
+        padding: 0 1rem;
+    }
+    .cart li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cart li .product{
+        margin-bottom: 1.25rem;
+    }
+    .cart li .price {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .cart li .price h4{
+        font-size: 1.25rem;
+    }
 }
