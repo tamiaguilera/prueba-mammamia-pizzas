@@ -7,7 +7,7 @@ import Ingredients from "./Ingredients.jsx"
 import { formatPrice } from "../utils/utils.js"
 
 const Menu = ()=>{
-    const { menu } = useContext(Context)
+    const { menu , addToCart} = useContext(Context)
     const navigate = useNavigate()
 
     const viewPizza = (id)=> navigate(`/pizza/${id}`)
@@ -26,7 +26,7 @@ const Menu = ()=>{
 
                                 <div className="btn-row">
                                     <button className="btn btn-primary" onClick={()=> viewPizza(item.id)} >Ver más</button>
-                                    <button className="btn btn-secondary" >Añadir</button>
+                                    <button className="btn btn-secondary" onClick={()=> addToCart(item)}>Añadir</button>
                                 </div>
                             </div>
 

@@ -7,7 +7,7 @@ import { formatPrice } from "../utils/utils.js"
 
 const Pizza = ()=>{
     const { id } = useParams()
-    const { menu } = useContext(Context)
+    const { menu, addToCart} = useContext(Context)
 
     const [pizza, setPizza] = useState({ingredients: [],price: 0})
 
@@ -20,7 +20,7 @@ const Pizza = ()=>{
 return(
         <main>
             <div className="pizza-view" >
-                <section className="image"  style={{backroundImage: `url(${pizza.img})`}}>
+                <section className="image"  style={{backgroundImage: `url(${pizza.img})`}}>
                 </section>
                 <article className="content" >
                     <h4>{pizza.name}</h4>
@@ -30,7 +30,7 @@ return(
                         <div className="price-row" >
                             <h3>Precio: ${ formatPrice(pizza.price ? pizza.price : 0)}</h3>
 
-                            <button className="btn btn-primary" > Añadir</button>
+                            <button className="btn btn-primary" onClick={()=> addToCart(pizza)} > Añadir</button>
 
                         </div>
 

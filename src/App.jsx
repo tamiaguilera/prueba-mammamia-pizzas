@@ -14,6 +14,8 @@ import Cart from './views/Cart.jsx'
 import Payment from './views/Payment.jsx'
 import NotFound from './views/NotFound'
 
+import { formatPrice } from './utils/utils'
+
 
 
 function App() {
@@ -21,17 +23,53 @@ function App() {
   const [cart, setCart] = useState([])
 
 
-  const globalState = {menu, cart}
+  const addToCart = (item)=> {
+    const itemIndex = cart.findIndex((pizza)=> pizza.id === item.id)
+    const updateCart = [...cart]
+    if(itemIndex === -1){
+      const pizza = {
+        id: item.id,
+        count: 1,
+        price: item.price,
+        img: item.img, 
+        name: item.name
+      }
+      updateCart.push(pizza)
+    } else {
+      updateCart[itemIndex].count+= 1
+
+    }
+    setCart(updateCart)
+  }
+
+  const removeFromCart = (item)=>{
+    const itemIndex = cart.findIndex((pizza)=> pizza.id === item.id)
+    const updateCart = [...cart]
+
+    updateCart[itemIndex].count -= 1
+
+    if(updateCart[itemIndex].count <= 0){
+      updateCart.splice(itemIndex, 1)
+    }
+    setCart(updateCart)
+  }
+
+  const cartTotal = ()=>{
+    let total = 0
+    cart.forEach((item)=> total += item.count * item.price)
+
+    return formatPrice(total)
+  }
 
   useEffect(()=> {
     fetch('/pizzas.json')
       .then((res)=> res.json())
-      .then((json)=> {
-        setMenu(json)
-        console.log(json)
-      })
+      .then((json)=> setMenu(json))
       .catch((error)=> console.log(error))
   }, [])
+
+  const globalState = {menu, cart, addToCart, removeFromCart, cartTotal }
+
   
   return (
     <div className="App">
